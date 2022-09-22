@@ -8,7 +8,9 @@ const Title = styled.h4`
   color: purple;
 `;
 
-function Wilder(props: IWilder): JSX.Element {
+function Wilder(
+  props: IWilder & { onAddSkillsClicked: () => void }
+): JSX.Element {
   return (
     <article className="card">
       <img src={blank_profile} alt={`${props.name} Profile`} />
@@ -27,6 +29,7 @@ function Wilder(props: IWilder): JSX.Element {
           );
         })}
       </ul>
+      <button onClick={props.onAddSkillsClicked}>Add skills</button>
     </article>
   );
 }
